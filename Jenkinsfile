@@ -1,9 +1,9 @@
-pipeline {
+pipeline  {
   agent { label 'linux'}
-  options {
+  options  {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
-  stages {
+  stages  {
     steps('scan')  {
       steps  {
         withSonarQubeEnv(installationName: 'sql1')  {
